@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/nav_action_search"
+        android:icon="@drawable/ic_search"
+        android:title="@string/nav_search_string"
+        app:showAsAction="always|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView"/>
+    <item
+        android:id="@+id/nav_action_notification"
+        android:icon="@drawable/ic_notification"
+        android:title="@string/nav_notification_string"
+        app:showAsAction="ifRoom" />
+
+</menu>

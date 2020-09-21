@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group>
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/nav_home_string" />
+        <item
+            android:id="@+id/nav_catalog_sop"
+            android:icon="@drawable/ic_catalog"
+            android:title="@string/nav_catalog_string" />
+    </group>
+
+    <item android:title="@string/nav_account_string">
+        <menu>
+            <item
+                android:id="@+id/nav_profile"
+                android:icon="@drawable/ic_account"
+                android:title="@string/nav_profile_string" />
+            <item
+                android:id="@+id/nav_created_sop"
+                android:icon="@drawable/ic_sop"
+                android:title="@string/nav_created_string" />
+            <item
+                android:id="@+id/nav_favorite_sop"
+                android:icon="@drawable/ic_favorite"
+                android:title="@string/nav_favorite_string" />
+            <item
+                android:id="@+id/nav_schedule_sop"
+                android:icon="@drawable/ic_schedule"
+                android:title="@string/nav_schedule_string" />
+        </menu>
+    </item>
+</menu>

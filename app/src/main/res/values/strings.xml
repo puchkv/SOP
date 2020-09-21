@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">SOP</string>
+
+    <string name="nav_home_string">Головна</string>
+    <string name="nav_profile_string">Мій профіль</string>
+    <string name="nav_created_string">Створені СОП</string>
+    <string name="nav_favorite_string">Збережені СОП</string>
+    <string name="nav_schedule_string">СОПи на узгодженні</string>
+    <string name="nav_catalog_string">Каталог СОП</string>
+    <string name="nav_account_string">Аккаунт</string>
+
+    <string name="nav_example_username">Іванов Іван</string>
+    <string name="nav_example_email">ivanovivan1923@gmail.com</string>
+    <string name="nav_notification_string">Повідомлення</string>
+    <string name="nav_search_string">Пошук</string>
+    <string name="nav_open_status_string">Навігацію відкрито</string>
+    <string name="nav_close_status_string">Навігація закрита</string>
+
+</resources>
