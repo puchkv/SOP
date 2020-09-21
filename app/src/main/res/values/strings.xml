@@ -15,5 +15,24 @@
     <string name="nav_search_string">Пошук</string>
     <string name="nav_open_status_string">Навігацію відкрито</string>
     <string name="nav_close_status_string">Навігація закрита</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="sop_name">Найменування СОП</string>
+    <string name="department_name">Цех холодного прокату (ЦХП)</string>
+    <string name="sop_about">Опис СОП</string>
+    <string name="todo">TODO</string>
+    <string name="last_sop">Останні СОПи</string>
+    <string name="fio_tv">ФIО:</string>
+    <string name="position_tv">Посада:</string>
+    <string name="department_tv">Цех:</string>
+    <string name="email_tv">Ел.пошта:</string>
+    <string name="phone_tv">Телефон:</string>
+    <string name="average_assessment_SOP">Середня оцiнка СОП:</string>
+    <string name="commentToMySOP">Коментарi до моїх СОП:</string>
+    <string name="commentToOtherSOP">Коментарi до iнших СОП:</string>
+    <string name="step_action">Дiя:</string>
+    <string name="step_time">Тривалiсть:</string>
+    <string name="step_expectedResult">Очікуваний\nрезультат:</string>
+    <string name="step_keyPoints">Ключовi моменти:</string>
 
 </resources>
