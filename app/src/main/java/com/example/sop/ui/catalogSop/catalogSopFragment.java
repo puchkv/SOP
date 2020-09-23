@@ -1,19 +1,25 @@
-package com.example.sop;
+package com.example.sop.ui.catalogSop;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.Navigation;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
+
+import com.example.sop.R;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link scheduleSopFragment#newInstance} factory method to
+ * Use the {@link catalogSopFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class scheduleSopFragment extends Fragment {
+public class catalogSopFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -24,7 +30,7 @@ public class scheduleSopFragment extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public scheduleSopFragment() {
+    public catalogSopFragment() {
         // Required empty public constructor
     }
 
@@ -34,11 +40,11 @@ public class scheduleSopFragment extends Fragment {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment scheduleSopFragment.
+     * @return A new instance of fragment catalogSopFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static scheduleSopFragment newInstance(String param1, String param2) {
-        scheduleSopFragment fragment = new scheduleSopFragment();
+    public static catalogSopFragment newInstance(String param1, String param2) {
+        catalogSopFragment fragment = new catalogSopFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -59,6 +65,20 @@ public class scheduleSopFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_schedule_sop, container, false);
+        return inflater.inflate(R.layout.fragment_catalog_sop, container, false);
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        LinearLayout layout = view.findViewById(R.id.TEST);
+        layout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Navigation.findNavController(view).navigate(R.id.action_nav_catalog_sop_to_viewSopFragment);
+            }
+        });
+
     }
 }

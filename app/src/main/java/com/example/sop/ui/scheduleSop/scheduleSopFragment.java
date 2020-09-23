@@ -1,21 +1,21 @@
-package com.example.sop;
+package com.example.sop.ui.scheduleSop;
 
 import android.os.Bundle;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
-import android.widget.Toast;
-import android.widget.Toolbar;
 
-public class homeFragment extends Fragment implements View.OnClickListener {
+import com.example.sop.R;
+
+/**
+ * A simple {@link Fragment} subclass.
+ * Use the {@link scheduleSopFragment#newInstance} factory method to
+ * create an instance of this fragment.
+ */
+public class scheduleSopFragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,7 +26,7 @@ public class homeFragment extends Fragment implements View.OnClickListener {
     private String mParam1;
     private String mParam2;
 
-    public homeFragment() {
+    public scheduleSopFragment() {
         // Required empty public constructor
     }
 
@@ -36,11 +36,11 @@ public class homeFragment extends Fragment implements View.OnClickListener {
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment homeFragment.
+     * @return A new instance of fragment scheduleSopFragment.
      */
     // TODO: Rename and change types and number of parameters
-    public static homeFragment newInstance(String param1, String param2) {
-        homeFragment fragment = new homeFragment();
+    public static scheduleSopFragment newInstance(String param1, String param2) {
+        scheduleSopFragment fragment = new scheduleSopFragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -61,32 +61,6 @@ public class homeFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View rootView =
-                inflater.inflate(R.layout.fragment_home, container, false);
-
-        LinearLayout linear_sop = (LinearLayout) rootView.findViewById(R.id.linear_sop);
-        linear_sop.setOnClickListener(this);
-
-        return rootView;
-        //return inflater.inflate(R.layout.fragment_home, container, false);
-
-    }
-
-    @Override
-    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
-        super.onViewCreated(view, savedInstanceState);
-
-    }
-
-    @Override
-    public void onClick(View v) {
-
-        switch (v.getId()){
-            case R.id.linear_sop:
-                Toast.makeText(getActivity(), "Вы нажали на СОП",
-                        Toast.LENGTH_SHORT).show();
-                break;
-        }
-
+        return inflater.inflate(R.layout.fragment_schedule_sop, container, false);
     }
 }

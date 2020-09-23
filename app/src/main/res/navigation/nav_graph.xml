@@ -6,7 +6,7 @@
     app:startDestination="@id/nav_home">
     <fragment
         android:id="@+id/nav_home"
-        android:name="com.example.sop.homeFragment"
+        android:name="com.example.sop.ui.home.homeFragment"
         android:label="Головна"
         tools:layout="@layout/fragment_home">
         <action
@@ -27,27 +27,43 @@
     </fragment>
     <fragment
         android:id="@+id/nav_profile"
-        android:name="com.example.sop.profileFragment"
+        android:name="com.example.sop.ui.profile.profileFragment"
         android:label="Мій профіль"
         tools:layout="@layout/fragment_profile" />
     <fragment
         android:id="@+id/nav_created_sop"
-        android:name="com.example.sop.createdSopFragment"
+        android:name="com.example.sop.ui.createdSop.createdSopFragment"
         android:label="Створені СОП"
         tools:layout="@layout/fragment_created_sop" />
     <fragment
         android:id="@+id/nav_favorite_sop"
-        android:name="com.example.sop.favoriteSopFragment"
+        android:name="com.example.sop.ui.favoriteSop.favoriteSopFragment"
         android:label="Збережені СОП"
         tools:layout="@layout/fragment_favorite_sop" />
     <fragment
         android:id="@+id/nav_schedule_sop"
-        android:name="com.example.sop.scheduleSopFragment"
+        android:name="com.example.sop.ui.scheduleSop.scheduleSopFragment"
         android:label="СОПи на узгодженні"
         tools:layout="@layout/fragment_schedule_sop" />
     <fragment
         android:id="@+id/nav_catalog_sop"
-        android:name="com.example.sop.catalogSopFragment"
+        android:name="com.example.sop.ui.catalogSop.catalogSopFragment"
         android:label="Каталог СОП"
-        tools:layout="@layout/fragment_catalog_sop" />
+        tools:layout="@layout/fragment_catalog_sop" >
+        <action
+            android:id="@+id/action_nav_catalog_sop_to_viewSopFragment"
+            app:destination="@id/nav_view_sop" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_view_sop"
+        android:name="com.example.sop.ui.viewSop.viewSopFragment"
+        tools:layout="@layout/fragment_view_sop" >
+        <action
+            android:id="@+id/action_nav_view_sop_to_nav_view_sop_steps"
+            app:destination="@id/nav_view_sop_steps" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_view_sop_steps"
+        android:name="com.example.sop.ui.viewSopSteps.viewSopStepsFragment"
+        tools:layout="@layout/fragment_view_sop_steps"/>
 </navigation>

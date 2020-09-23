@@ -3,7 +3,11 @@
     <color name="colorPrimary">#CD2222</color>
     <color name="colorPrimaryDark">#B61515</color>
     <color name="colorAccent">#D50000</color>
+    <color name="colorLightGrey">#ECECEC</color>
+    <color name="colorMiddleGrey">#BABABA</color>
 
-    <color name="titleColor">#353535</color>
-    <color name="textPrimaryColor">#252525</color>
+    <color name="titleColor">#424242</color>
+    <color name="textTitleColor">#939393</color>
+    <color name="textPrimaryColor">#303030</color>
+
 </resources>
