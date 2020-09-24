@@ -30,7 +30,7 @@
     <string name="commentToMySOP">Коментарi до моїх СОП:</string>
     <string name="commentToOtherSOP">Коментарi до iнших СОП:</string>
     <string name="step_action">Дiя:</string>
-    <string name="step_time">Тривалiсть:</string>
+    <string name="step_time">Тривалiсть(хв):</string>
     <string name="step_expectedResult">Очікуваний\nрезультат:</string>
     <string name="step_keyPoints">Ключовi моменти:</string>
     <string name="sop_step_image_string">Зображення кроку СОП</string>
@@ -44,5 +44,9 @@
     <string name="duration_string">"Тривалість: "</string>
     <string name="expected_result_string">Очікуваний результат:</string>
     <string name="keypoints_string">Ключові моменти:</string>
+    <string name="create_sop">Створити СОП</string>
+    <string name="changePhoto_createSop">Обрати зображення</string>
+    <string name="approved_sop">Затвердив:</string>
+    <string name="agreed_sop">Узгодив:</string>
 
 </resources>
