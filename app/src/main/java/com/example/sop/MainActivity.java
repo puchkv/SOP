@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.drawerlayout.widget.DrawerLayout;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.NavController;
 import androidx.navigation.NavDestination;
 import androidx.navigation.Navigation;
@@ -15,9 +16,11 @@ import androidx.navigation.ui.NavigationUI;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.sop.ui.catalogSop.catalogSopViewModel;
 import com.google.android.material.navigation.NavigationView;
 
 public class MainActivity extends AppCompatActivity {
@@ -33,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         setupNavigationUI();
+
     }
     
     private void setupNavigationUI() {
