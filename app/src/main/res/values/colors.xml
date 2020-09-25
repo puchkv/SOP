@@ -5,6 +5,7 @@
     <color name="colorAccent">#D50000</color>
     <color name="colorLightGrey">#ECECEC</color>
     <color name="colorMiddleGrey">#BABABA</color>
+    <color name="colorGrey">#A1A1A1</color>
 
     <color name="titleColor">#424242</color>
     <color name="textTitleColor">#939393</color>

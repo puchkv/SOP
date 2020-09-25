@@ -1,4 +1,4 @@
-package com.example.sop.ui.catalogSop;
+package com.example.sop.ui.catalogSop.factory;
 
 import android.util.Log;
 
@@ -21,7 +21,7 @@ import io.reactivex.rxjava3.annotations.NonNull;
 import io.reactivex.rxjava3.observers.DisposableObserver;
 import io.reactivex.rxjava3.schedulers.Schedulers;
 
-public class catalogSopViewModel extends ViewModel {
+public class factoryViewModel extends ViewModel {
 
     private Api api;
 

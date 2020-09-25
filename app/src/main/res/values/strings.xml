@@ -15,8 +15,6 @@
     <string name="nav_search_string">Пошук</string>
     <string name="nav_open_status_string">Навігацію відкрито</string>
     <string name="nav_close_status_string">Навігація закрита</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="sop_name">Найменування СОП</string>
     <string name="sop_about">Опис СОП</string>
     <string name="todo">TODO</string>
@@ -44,5 +42,14 @@
     <string name="duration_string">"Тривалість: "</string>
     <string name="expected_result_string">Очікуваний результат:</string>
     <string name="keypoints_string">Ключові моменти:</string>
+    <string name="category_string">Категорія:</string>
+    <string name="status_string">Статус:</string>
+    <string name="description_string">Опис:</string>
+    <string name="created_at_string">Створено:</string>
+    <string name="approved_at_string">Затверджено:</string>
+    <string name="nd_string">Посилання на НД:</string>
+    <string name="owner_string">Створив:</string>
+    <string name="approved_by_string">Затвердив:</string>
+    <string name="coordinated_by_string">Узгодив:</string>
 
 </resources>

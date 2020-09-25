@@ -26,11 +26,11 @@
 
 
             <ImageView
+                android:id="@+id/sop_image_view"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:contentDescription="@string/sop_step_image_string"
-                android:scaleType="centerCrop"
-                app:srcCompat="@drawable/zavod_preview" />
+                android:scaleType="centerCrop" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -48,7 +48,7 @@
                         android:id="@+id/sop_name_tv"
                         android:layout_width="0dp"
                         android:layout_height="wrap_content"
-                        android:text="Ремонт вальцекаторного станкка ПЛ256 135 361 - 321.212:2020"
+                        android:paddingVertical="10dp"
                         android:textAppearance="@style/TextAppearance.AppCompat.Title"
                         android:layout_weight="0.9"
                         android:textColor="@color/titleColor" />
@@ -68,7 +68,7 @@
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <RatingBar
+                    <!--<RatingBar
                         android:id="@+id/sop_rating"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -76,37 +76,7 @@
                         android:rating="3.5"
                         android:paddingVertical="5dp"
                         android:isIndicator="true"
-                        style="?android:attr/ratingBarStyleIndicator"/>
-
-                   <!-- <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_star_filled"
-                        app:tint="@color/colorPrimary" />
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_star_filled"
-                        app:tint="@color/colorPrimary" />
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_star_filled"
-                        app:tint="@color/colorPrimary" />
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_star_filled"
-                        app:tint="@color/colorPrimary" />
-
-                    <ImageView
-                        android:layout_width="24dp"
-                        android:layout_height="24dp"
-                        android:src="@drawable/ic_star"
-                        app:tint="@color/colorPrimary" />-->
+                        style="?android:attr/ratingBarStyleIndicator"/>-->
 
                 </LinearLayout>
 
@@ -117,13 +87,12 @@
 
                     <TableRow android:paddingVertical="10dp">
                         <TextView
-                            android:text="Статус: "
+                            android:text="@string/status_string"
                             android:textColor="@color/textTitleColor" />
 
                         <TextView
                             android:id="@+id/sop_status_tv"
                             android:layout_width="wrap_content"
-                            android:text="В роботі"
                             android:textColor="@color/textPrimaryColor" />
                     </TableRow>
 
@@ -131,14 +100,13 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Опис: "
+                            android:text="@string/description_string"
                             android:textColor="@color/textTitleColor" />
 
                         <TextView
                             android:id="@+id/sop_description_tv"
                             android:layout_width="0dp"
                             android:layout_height="wrap_content"
-                            android:text="Описані ключові моменти осмотру та ремонту вальцешототам станка ПЛ 256"
                             android:textColor="@color/textPrimaryColor" />
                     </TableRow>
 
@@ -146,19 +114,18 @@
                         <TextView
                             android:layout_width="80dp"
                             android:layout_height="wrap_content"
-                            android:text="Категорія: "
+                            android:text="@string/category_string"
                             android:textColor="@color/textTitleColor" />
 
                         <TextView
                             android:id="@+id/sop_category_tv"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Ремонт обладнання"
                             android:textColor="@color/colorPrimaryDark"
                             android:textStyle="bold" />
                     </TableRow>
 
-                    <TableRow android:paddingVertical="10dp" android:layout_width="0dp">
+                    <!--<TableRow android:paddingVertical="10dp" android:layout_width="0dp">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
@@ -171,20 +138,19 @@
                             android:layout_height="wrap_content"
                             android:text="Ветошь, масло"
                             android:textColor="@color/textPrimaryColor" />
-                    </TableRow>
+                    </TableRow>-->
 
                     <TableRow android:paddingVertical="10dp">
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Створено: "
+                            android:text="@string/created_at_string"
                             android:textColor="@color/textTitleColor" />
 
                         <TextView
                             android:id="@+id/sop_created_at"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="22.09.2020 15:10"
                             android:textColor="@color/textPrimaryColor" />
                     </TableRow>
 
@@ -192,14 +158,13 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Затверджено: "
+                            android:text="@string/approved_at_string"
                             android:textColor="@color/textTitleColor" />
 
                         <TextView
                             android:id="@+id/sop_approved_at"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="22.09.2020 15:10"
                             android:textColor="@color/textPrimaryColor" />
                     </TableRow>
 
@@ -207,7 +172,7 @@
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:text="Посилання на НД: "
+                            android:text="@string/nd_string"
                             android:textColor="@color/textTitleColor" />
 
                         <TextView
@@ -221,19 +186,30 @@
                 </TableLayout>
 
             </LinearLayout>
-            <ImageView
-                android:layout_width="42dp"
-                android:layout_height="42dp"
-                android:layout_gravity="center"
-                app:tint="@color/colorPrimary"
-                android:src="@drawable/ic_dropdown"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/colorPrimary"/>
 
             <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="end|bottom"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/sop_details_btn"
+                    android:layout_width="42dp"
+                    android:layout_height="42dp"
+                    android:layout_gravity="center"
+                    app:tint="@color/colorPrimary"
+                    android:src="@drawable/ic_dropdown"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorPrimary"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sop_details_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
@@ -250,21 +226,19 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Створив: "/>
+                                android:text="@string/owner_string"/>
                             <TextView
                                 android:id="@+id/sop_owner_position"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="12sp"
-                                android:textColor="@color/textTitleColor"
-                                android:text="Інженер"/>
+                                android:textColor="@color/textTitleColor"/>
                         </LinearLayout>
 
                         <TextView
                             android:id="@+id/sop_owner_name"
                             android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="Іванов Іван"/>
+                            android:layout_width="wrap_content"/>
 
                     </TableRow>
 
@@ -273,14 +247,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Затвердив: "/>
+                                android:text="@string/approved_by_string"/>
                             <TextView
                                 android:id="@+id/sop_approver_position"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="12sp"
-                                android:textColor="@color/textTitleColor"
-                                android:text="Керівник"/>
+                                android:textColor="@color/textTitleColor"/>
                         </LinearLayout>
 
                         <ImageView
@@ -293,8 +266,7 @@
                         <TextView
                             android:id="@+id/sop_approver_name"
                             android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="Порошенко Петро"/>
+                            android:layout_width="wrap_content"/>
                     </TableRow>
 
                     <TableRow android:paddingVertical="10dp">
@@ -302,14 +274,13 @@
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
-                                android:text="Узгодив: "/>
+                                android:text="@string/coordinated_by_string"/>
                             <TextView
                                 android:id="@+id/sop_coordinator_position"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:textSize="12sp"
-                                android:textColor="@color/textTitleColor"
-                                android:text="Спеціаліст/відповід. по НС"/>
+                                android:textColor="@color/textTitleColor"/>
                         </LinearLayout>
 
                         <ImageView
@@ -322,10 +293,7 @@
                         <TextView
                             android:id="@+id/sop_coordinator_name"
                             android:layout_height="wrap_content"
-                            android:layout_width="wrap_content"
-                            android:text="Барак Обама"/>
-
-
+                            android:layout_width="wrap_content"/>
                     </TableRow>
 
                 </TableLayout>
@@ -333,6 +301,8 @@
             </LinearLayout>
 
         </LinearLayout>
+
+
 
     </androidx.core.widget.NestedScrollView>
 

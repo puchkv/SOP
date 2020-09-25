@@ -6,59 +6,43 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.navigation.Navigation;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.sop.R;
+import com.example.sop.adapters.RecyclerAdapter;
+import com.example.sop.api.Const;
+import com.example.sop.models.Sop;
+import com.example.sop.ui.catalogSop.category.categoryViewModel;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link viewSopFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.util.Objects;
+
 public class viewSopFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    private static Boolean isOpen = false;
+    private LinearLayout sopDetails;
+    private ImageView sopDetailsButton;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    private static final String PARAM_ID = "sop_id";
 
-    public viewSopFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment viewSopFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static viewSopFragment newInstance(String param1, String param2) {
-        viewSopFragment fragment = new viewSopFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    private int sop_id;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            sop_id = getArguments().getInt(PARAM_ID);
         }
     }
 
@@ -66,18 +50,71 @@ public class viewSopFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setTitle("");
-        return inflater.inflate(R.layout.fragment_view_sop, container, false);
+        View root = inflater.inflate(R.layout.fragment_view_sop, container, false);
+
+        sopDetails = root.findViewById(R.id.sop_details_layout);
+        sopDetails.setVisibility(View.INVISIBLE);
+
+        viewSopViewModel model = new ViewModelProvider(this).get(viewSopViewModel.class);
+
+        final TextView tvSopName = root.findViewById(R.id.sop_name_tv);
+        final TextView tvSopDescripton = root.findViewById(R.id.sop_description_tv);
+        final TextView tvSopStatus = root.findViewById(R.id.sop_status_tv);
+        final TextView tvSopCategory = root.findViewById(R.id.sop_category_tv);
+        final TextView tvSopCreatedAt = root.findViewById(R.id.sop_created_at);
+        final TextView tvSopApprovedAt = root.findViewById(R.id.sop_approved_at);
+        final TextView tvSopOwner = root.findViewById(R.id.sop_owner_name);
+        final TextView tvSopOwnerPosition = root.findViewById(R.id.sop_owner_position);
+        final TextView tvSopApprover = root.findViewById(R.id.sop_approver_name);
+        final TextView tvSopApproverPosition = root.findViewById(R.id.sop_approver_position);
+
+        final ImageView sopImage = root.findViewById(R.id.sop_image_view);
+
+        model.getSop(sop_id).observe(getViewLifecycleOwner(), sop -> {
+
+            tvSopName.setText(sop.getName());
+            tvSopDescripton.setText(sop.getDescription());
+            tvSopStatus.setText(sop.getStatus());
+            tvSopCategory.setText(sop.getCategory().getName());
+            tvSopCreatedAt.setText(sop.getCreatedAt());
+            tvSopApprovedAt.setText("");
+
+            String ownerName = sop.getOwner().getName() + " " + sop.getOwner().getSurname();
+            tvSopOwner.setText(ownerName);
+            tvSopOwnerPosition.setText(sop.getOwner().getPosition().getName());
+
+            String approverName = sop.getApprover().getName() + " " + sop.getApprover().getSurname();
+            tvSopApprover.setText(approverName);
+            tvSopApproverPosition.setText(sop.getApprover().getPosition().getName());
+
+            Glide.with(root.getContext())
+                    .load(Const.apiURL + Const.sop_storage_path + sop.getPicture())
+                    .into(sopImage);
+
+        });
+
+        Objects.requireNonNull(((AppCompatActivity) requireActivity()).getSupportActionBar()).setTitle("");
+        return root;
     }
 
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        FloatingActionButton actionButton = view.findViewById(R.id.sop_open_button);
-        actionButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Navigation.findNavController(view).navigate(R.id.action_nav_view_sop_to_nav_view_sop_steps);
+
+        sopDetailsButton = view.findViewById(R.id.sop_details_btn);
+        sopDetails.animate().translationY(-(sopDetails.getHeight())).setDuration(300);
+
+        sopDetailsButton.setOnClickListener(view1 -> {
+            if(isOpen) {
+                sopDetails.setVisibility(View.INVISIBLE);
+                sopDetailsButton.animate().rotation(0).setDuration(300);
+                sopDetails.animate().translationY(-(sopDetails.getHeight())).setDuration(300);
+                isOpen = false;
+            } else {
+                sopDetails.setVisibility(View.VISIBLE);
+                sopDetails.animate().translationY(sopDetails.getHeight()).setDuration(300);
+                sopDetailsButton.animate().rotation(180).setDuration(300);
+                isOpen = true;
             }
         });
     }

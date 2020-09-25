@@ -1,4 +1,4 @@
-package com.example.sop.ui.catalogSop;
+package com.example.sop.ui.catalogSop.factory;
 
 import android.os.Bundle;
 
@@ -14,37 +14,36 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.LinearLayout;
 import android.widget.Toast;
 
+import com.example.sop.adapters.RecyclerAdapter;
 import com.example.sop.api.Const;
 import com.example.sop.models.Factory;
 import com.example.sop.R;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.Objects;
 
-public class catalogSopFragment extends Fragment {
+public class factoryFragment extends Fragment implements RecyclerAdapter.OnRecyclerViewItemClickListener<Factory> {
 
     private RecyclerView recyclerView;
-    private RecyclerView.Adapter adapter;
-    private RecyclerView.LayoutManager layoutManager;
+    private RecyclerAdapter<Factory> adapter;
 
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
 
-        catalogSopViewModel model = new ViewModelProvider(this).get(catalogSopViewModel.class);
+        factoryViewModel model = new ViewModelProvider(this).get(factoryViewModel.class);
 
-        View root = inflater.inflate(R.layout.fragment_catalog_sop, container, false);
+        View root = inflater.inflate(R.layout.fragment_catalog_sop_factory, container, false);
 
-        recyclerView = root.findViewById(R.id.factory_recycler);
-        layoutManager = new LinearLayoutManager(getActivity());
+        recyclerView = root.findViewById(R.id.recyclerView);
+
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(layoutManager);
 
         model.getFactories().observe(getViewLifecycleOwner(), factories -> {
             Log.i(Const.TAG, "ZAVOD: " + factories.size());
-            adapter = new catalogSopAdapter(getActivity(), factories);
+            adapter = new RecyclerAdapter<>(factories, this, R.layout.row_factory);
             recyclerView.setAdapter(adapter);
         });
 
@@ -56,5 +55,13 @@ public class catalogSopFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
     }
 
+    @Override
+    public void onItemClick(Factory data) {
 
+        Bundle bundle = new Bundle();
+        bundle.putInt("factory_id", data.getId());
+        bundle.putString("factory_name", data.getName());
+
+        Navigation.findNavController(requireView()).navigate(R.id.action_nav_catalog_sop_to_departmentFragment, bundle);
+    }
 }

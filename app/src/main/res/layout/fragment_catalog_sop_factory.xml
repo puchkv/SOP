@@ -4,12 +4,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.catalogSop.catalogSopFragment">
+    tools:context=".ui.catalogSop.factory.factoryFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/factory_recycler"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:padding="10dp"/>
+        android:layout_height="match_parent" />
 
 </FrameLayout>
