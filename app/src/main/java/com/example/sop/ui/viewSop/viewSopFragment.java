@@ -102,17 +102,13 @@ public class viewSopFragment extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
         sopDetailsButton = view.findViewById(R.id.sop_details_btn);
-        sopDetails.animate().translationY(-(sopDetails.getHeight())).setDuration(300);
-
         sopDetailsButton.setOnClickListener(view1 -> {
             if(isOpen) {
                 sopDetails.setVisibility(View.INVISIBLE);
                 sopDetailsButton.animate().rotation(0).setDuration(300);
-                sopDetails.animate().translationY(-(sopDetails.getHeight())).setDuration(300);
                 isOpen = false;
             } else {
                 sopDetails.setVisibility(View.VISIBLE);
-                sopDetails.animate().translationY(sopDetails.getHeight()).setDuration(300);
                 sopDetailsButton.animate().rotation(180).setDuration(300);
                 isOpen = true;
             }

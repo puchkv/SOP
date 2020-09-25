@@ -51,5 +51,7 @@
     <string name="owner_string">Створив:</string>
     <string name="approved_by_string">Затвердив:</string>
     <string name="coordinated_by_string">Узгодив:</string>
+    <string name="select_photo_string">ОБРАТИ ЗОБРАЖЕННЯ</string>
+    <string name="create_sop">Створити СОП</string>
 
 </resources>

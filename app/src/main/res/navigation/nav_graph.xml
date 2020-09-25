@@ -25,6 +25,9 @@
             android:id="@+id/action_nav_home_to_catalogSopFragment"
             app:destination="@id/nav_catalog_sop"
             app:enterAnim="@anim/fragment_fast_out_extra_slow_in" />
+        <action
+            android:id="@+id/action_nav_home_to_fragment_create_sop"
+            app:destination="@id/nav_create_sop" />
     </fragment>
     <fragment
         android:id="@+id/nav_profile"
@@ -108,4 +111,18 @@
             android:name="com.example.sop.ui.viewSop.viewSopFragment"
             tools:layout="@layout/fragment_view_sop" />
     </navigation>
+    <fragment
+        android:id="@+id/nav_create_sop"
+        android:name="com.example.sop.ui.createSop.fragment_create_sop"
+        android:label="Створення СОП"
+        tools:layout="@layout/fragment_create_sop">
+        <action
+            android:id="@+id/action_fragment_create_sop_to_fragment_create_sop_steps"
+            app:destination="@id/fragment_create_sop_steps" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_create_sop_steps"
+        android:name="com.example.sop.ui.createSop.fragment_create_sop_steps"
+        android:label="Створення СОП"
+        tools:layout="@layout/fragment_create_sop_steps" />
 </navigation>

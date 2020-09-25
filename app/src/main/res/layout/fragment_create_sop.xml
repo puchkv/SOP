@@ -27,8 +27,9 @@
                 android:id="@+id/select_photo_button"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:backgroundTint="#EA5D5D"
-                android:text="@string/changePhoto_createSop" />
+                android:backgroundTint="@color/colorPrimary"
+                android:textColor="@android:color/white"
+                android:text="обрати зображення" />
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -199,7 +200,7 @@
                         <TextView
                             android:layout_width="80dp"
                             android:layout_height="wrap_content"
-                            android:text="@string/agreed_sop"
+                            android:text="Затвердив"
                             android:textColor="@color/textTitleColor" />
 
                         <AutoCompleteTextView
@@ -217,7 +218,7 @@
                         <TextView
                             android:layout_width="80dp"
                             android:layout_height="wrap_content"
-                            android:text="@string/agreed_sop"
+                            android:text="Узгодив"
                             android:textColor="@color/textTitleColor" />
 
                         <AutoCompleteTextView
@@ -235,7 +236,7 @@
                         <TextView
                             android:layout_width="80dp"
                             android:layout_height="wrap_content"
-                            android:text="@string/approved_sop"
+                            android:text="Узгодив"
                             android:textColor="@color/textTitleColor" />
 
                         <AutoCompleteTextView

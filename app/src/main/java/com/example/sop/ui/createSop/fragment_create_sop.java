@@ -130,7 +130,7 @@ public class fragment_create_sop extends Fragment {
 
         Button createSop = view.findViewById(R.id.createSop_button);
         createSop.setOnClickListener(view1 -> Navigation.findNavController(view1)
-                .navigate(R.id.action_nav_create_sop_to_fragment_create_sop_steps));
+                .navigate(R.id.action_fragment_create_sop_to_fragment_create_sop_steps));
     }
 
     @Override
